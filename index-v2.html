@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="日本外国語専門学校（JCFL）Webサイトリニューアル提案 Concept B。">
+  <title>JCFL Concept B | 日本外国語専門学校</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{jcfl:{red:'#BC1932',blue:'#2144c7',deep:'#080808',gray:'#ffffff',panel:'#ffffff',purple:'#FEC6E9',lime:'#FEC6E9'}},boxShadow:{hard:'10px 10px 0 rgba(8,8,8,.14)',line:'0 0 0 1px rgba(8,8,8,.12)'}}}}
+  </script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:"Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#ffffff;color:#080808}.grid-bg{background-image:linear-gradient(rgba(8,8,8,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(8,8,8,.055) 1px,transparent 1px);background-size:36px 36px}.dots{background-image:radial-gradient(currentColor 1.4px,transparent 1.4px);background-size:12px 12px}.clip-angle{clip-path:polygon(0 0,100% 0,96% 100%,0 100%)}.vtext{writing-mode:vertical-rl;text-orientation:mixed}.ticker{animation:ticker 30s linear infinite}@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}.mega{max-height:0;overflow:hidden;transition:max-height .32s ease}.mega.open{max-height:520px}.hero-img{background-image:linear-gradient(90deg,rgba(8,8,8,.1),rgba(8,8,8,.35)),url('https://www.jcfl.ac.jp/course/images/index_main.jpg');background-size:cover;background-position:center}.panel{border:1px solid rgba(8,8,8,.14);border-radius:3px;background:#fff}.btn{border-radius:2px;font-weight:900;letter-spacing:.02em;display:inline-flex;align-items:center;justify-content:center}.section-title{font-weight:950;letter-spacing:.02em;line-height:.9}.label{font-size:12px;font-weight:950;letter-spacing:.18em;text-transform:uppercase}.image-tile{background-size:cover;background-position:center;min-height:230px}.arrow:after{content:'↗';margin-left:auto;font-weight:900}.tab.active{background:#080808;color:white}.news-item.hidden{display:none}
+  </style>
+</head>
+<body>
+  <aside class="fixed right-0 top-24 z-40 hidden w-[74px] lg:block">
+    <a href="https://oc.jcfl.ac.jp/" class="flex h-44 items-center justify-center bg-jcfl-lime text-xs font-black tracking-[.18em] text-jcfl-deep"><span class="vtext">OPEN CAMPUS</span></a>
+    <a href="https://entry.s-axol.jp/jcfl/step1?f=5" class="flex h-36 items-center justify-center bg-jcfl-red text-xs font-black tracking-[.18em] text-white"><span class="vtext">資料請求</span></a>
+    <button id="railTop" class="h-16 w-full bg-jcfl-deep text-xs font-black text-white">TOP</button>
+  </aside>
+
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-jcfl-deep bg-[#ffffff]">
+    <div class="grid grid-cols-[1fr_auto] border-b border-jcfl-deep/15 text-[11px] font-bold lg:grid-cols-[240px_1fr_420px]">
+      <div class="hidden items-center border-r border-jcfl-deep/15 px-4 lg:flex">Japan College of Foreign Languages</div>
+      <div class="flex items-center overflow-hidden px-4"><div class="ticker flex w-[200%] gap-8 whitespace-nowrap"><span>2027年4月入学希望者向け 学科・入試情報を更新</span><span>11学科34専攻の説明＆体験レッスン開催中</span><span>総合型選抜「併願」7/1受付開始</span><span>2027年4月入学希望者向け 学科・入試情報を更新</span><span>11学科34専攻の説明＆体験レッスン開催中</span><span>総合型選抜「併願」7/1受付開始</span></div></div>
+      <div class="hidden grid-cols-3 border-l border-jcfl-deep/15 text-center lg:grid"><a class="border-r border-jcfl-deep/15 py-2" href="#news">NEWS</a><a class="border-r border-jcfl-deep/15 py-2" href="#admission">入試情報</a><a class="py-2" href="#access">ACCESS</a></div>
+    </div>
+    <div class="mx-auto grid max-w-[1440px] grid-cols-[1fr_auto] items-center lg:grid-cols-[260px_1fr_210px]">
+      <a href="#top" class="flex h-[72px] items-center border-r border-jcfl-deep/15 px-4"><img src="assets/logo.png" alt="日本外国語専門学校" class="h-11 w-auto"></a>
+      <nav class="hidden h-[72px] grid-cols-7 text-center text-xs font-black lg:grid">
+        <a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/course/index.html">学科・専攻</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/aboutus/">JCFLの強み</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/job/index10.html">進路・就職</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/sa/sp_index.html">留学</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/recruitment/index.html">入試・学費</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://oc.jcfl.ac.jp/">OC</a><a class="grid place-items-center border-r border-jcfl-deep/15 hover:bg-jcfl-panel" href="https://www.jcfl.ac.jp/aboutus/campus.html">キャンパス</a>
+      </nav>
+      <div class="grid h-[72px] grid-cols-2 text-xs font-black"><a href="https://entry.s-axol.jp/jcfl/step1?f=5" class="grid place-items-center bg-jcfl-red px-4 text-white">資料請求</a><button id="menuBtn" class="border-l border-jcfl-deep bg-jcfl-deep px-4 text-white">MENU</button></div>
+    </div>
+    <div id="mega" class="mega bg-jcfl-deep text-white">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-white/15 p-px lg:grid-cols-4">
+        <a href="https://www.jcfl.ac.jp/course/index.html" class="block bg-jcfl-deep p-7"><p class="text-2xl font-black">学科・専攻紹介</p><p class="mt-3 text-sm font-bold text-white/55">11学科34専攻。英語・世界の言語から観光・留学まで</p></a><a href="https://www.jcfl.ac.jp/aboutus/" class="block bg-jcfl-deep p-7"><p class="text-2xl font-black">学校紹介</p><p class="mt-3 text-sm font-bold text-white/55">50年の歴史、全学科担任制、施設・設備を知る</p></a><a href="https://www.jcfl.ac.jp/job/index10.html" class="block bg-jcfl-deep p-7"><p class="text-2xl font-black">就職・資格・大学編入</p><p class="mt-3 text-sm font-bold text-white/55">99.7%の就職内定率と大学編入実績</p></a><a href="https://oc.jcfl.ac.jp/" class="block bg-jcfl-deep p-7"><p class="text-2xl font-black">オープンキャンパス</p><p class="mt-3 text-sm font-bold text-white/55">説明会・体験レッスン・オンライン相談へ</p></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="pt-[105px]">
+    <section class="grid-bg border-b border-jcfl-deep bg-[#ffffff]">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-jcfl-deep lg:grid-cols-[1.06fr_.94fr]">
+        <div class="bg-[#ffffff] p-4 lg:p-8">
+          <div class="grid min-h-[620px] grid-rows-[auto_1fr_auto] gap-4">
+            <div class="grid grid-cols-[1fr_120px] gap-4">
+              <div class="panel p-4"><p class="label text-jcfl-red">2027年4月入学希望・検討者向け</p><p class="mt-2 text-sm font-bold">英語、韓国語、世界の言語を身につけ、就職・留学・大学編入へ進む総合学園。</p></div>
+              <div class="grid place-items-center bg-jcfl-lime p-4 text-center text-2xl font-black leading-none">2026年度</div>
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="reveal inline-flex w-fit bg-jcfl-deep px-3 py-2 text-xs font-black tracking-[.2em] text-white">JAPAN COLLEGE OF FOREIGN LANGUAGES</p>
+              <h1 class="reveal mt-5 max-w-3xl text-[64px] font-black leading-[.88] tracking-[-.04em] sm:text-[96px] lg:text-[118px]">世界で<br><span class="text-jcfl-red">活躍</span>できる<br>自分へ。</h1>
+              <div class="reveal mt-6 grid gap-px bg-jcfl-deep md:grid-cols-3"><a class="arrow bg-jcfl-red p-5 text-sm font-black text-white" href="https://oc.jcfl.ac.jp/">オープンキャンパス</a><a class="arrow bg-[#ffffff] p-5 text-sm font-black" href="https://www.jcfl.ac.jp/course/index.html">11学科34専攻を見る</a><a class="arrow bg-jcfl-blue p-5 text-sm font-black text-white" href="#finder">好きから探す</a></div>
+            </div>
+            <div class="grid gap-px bg-jcfl-deep md:grid-cols-3"><div class="bg-[#ffffff] p-5"><p class="text-5xl font-black text-jcfl-red">11</p><p class="text-xs font-black tracking-[.2em]">学科</p></div><div class="bg-[#ffffff] p-5"><p class="text-5xl font-black text-jcfl-red">34</p><p class="text-xs font-black tracking-[.2em]">専攻</p></div><div class="bg-[#ffffff] p-5"><p class="text-5xl font-black text-jcfl-red">99.7%</p><p class="text-xs font-black tracking-[.2em]">就職内定率</p></div></div>
+          </div>
+        </div>
+        <div class="relative min-h-[620px] hero-img">
+          <div class="absolute left-0 top-0 grid w-full grid-cols-3 gap-px bg-jcfl-deep p-px"><div class="bg-white/92 p-4"><p class="label text-jcfl-red">LANGUAGE</p><p class="mt-2 text-sm font-black">英語・韓国語・世界の言語</p></div><div class="bg-white/92 p-4"><p class="label text-jcfl-red">CAREER</p><p class="mt-2 text-sm font-black">就職・資格・大学編入</p></div><div class="bg-white/92 p-4"><p class="label text-jcfl-red">GLOBAL</p><p class="mt-2 text-sm font-black">留学・海外大学進学</p></div></div>
+          <div class="absolute bottom-0 left-0 right-0 grid gap-px bg-jcfl-deep p-px md:grid-cols-[1fr_1.2fr]"><div class="bg-[#ffffff] p-5"><p class="label text-jcfl-red">Pickup</p><h2 class="mt-2 text-3xl font-black leading-tight">11学科34専攻で「夢」や「進路」が見つかる。</h2></div><div class="bg-jcfl-deep p-5 text-white"><p class="text-sm font-bold leading-7">語学・エアライン・ホテル・観光・ビジネス・公務員・留学・大学編入まで幅広く学べます。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-jcfl-deep bg-jcfl-deep text-white">
+      <div class="mx-auto grid max-w-[1440px] lg:grid-cols-[240px_1fr]">
+        <div class="border-r border-white/20 p-5"><p class="label text-jcfl-lime">Important</p><h2 class="mt-2 text-2xl font-black">重要なお知らせ</h2></div>
+        <div class="grid md:grid-cols-3"><a href="#news" class="border-r border-white/20 p-5 hover:bg-white/10"><p class="text-xs font-black text-jcfl-lime">2026.7.7</p><p class="mt-2 text-sm font-bold">台風に伴う説明会等開催情報のお知らせ</p></a><a href="#news" class="border-r border-white/20 p-5 hover:bg-white/10"><p class="text-xs font-black text-jcfl-lime">2026.6.30</p><p class="mt-2 text-sm font-bold">総合型選抜「併願」7/1（水）受付開始</p></a><a href="#news" class="border-r border-white/20 p-5 hover:bg-white/10"><p class="text-xs font-black text-jcfl-lime">2026.6.2</p><p class="mt-2 text-sm font-bold">総合型選抜／プレミアム選抜の受験方法を公開</p></a></div>
+      </div>
+    </section>
+
+    <section id="open-campus" class="border-b border-jcfl-deep bg-jcfl-panel">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-jcfl-deep lg:grid-cols-[.72fr_1.28fr]">
+        <div class="bg-jcfl-red p-6 text-white lg:p-10"><p class="label">Open Campus</p><h2 class="section-title mt-5 text-5xl lg:text-7xl">進路が<br>決まる、<br>見つかる。</h2><p class="mt-6 max-w-md text-sm font-bold leading-7 text-white/80">来校型・オンライン・個別相談を実施。気になる分野の体験レッスンで、学校の雰囲気を確かめられます。</p></div>
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-3"><article class="bg-[#ffffff] p-6 text-jcfl-deep"><p class="text-5xl font-black text-jcfl-red">7/12</p><h3 class="mt-5 text-2xl font-black leading-tight">韓国語でエアライン＆ホテル体験</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">韓国語で広がる進路。語学と接客の仕事を同時に体験。</p><a href="https://oc.jcfl.ac.jp/" class="btn mt-7 bg-jcfl-deep px-5 py-3 text-sm text-white">予約する</a></article><article class="bg-[#ffffff] p-6 text-jcfl-deep"><p class="text-5xl font-black text-jcfl-red">7/12</p><h3 class="mt-5 text-2xl font-black leading-tight">海外で学びたい人の留学説明会</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">アメリカ・ヨーロッパ・アジアの留学プログラムを紹介。</p><a href="https://oc.jcfl.ac.jp/" class="btn mt-7 bg-jcfl-deep px-5 py-3 text-sm text-white">予約する</a></article><article class="bg-[#ffffff] p-6 text-jcfl-deep"><p class="text-5xl font-black text-jcfl-red">ONLINE</p><h3 class="mt-5 text-2xl font-black leading-tight">オンライン＆個別学校説明会</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">自宅で日本外国語の魅力を知り、進路相談までできる。</p><a href="https://oc.jcfl.ac.jp/" class="btn mt-7 bg-jcfl-deep px-5 py-3 text-sm text-white">予約する</a></article></div>
+      </div>
+    </section>
+
+    <section id="topics" class="border-b border-jcfl-deep bg-[#ffffff] py-10">
+      <div class="mx-auto max-w-[1440px] px-4 lg:px-8">
+        <div class="grid gap-5 lg:grid-cols-[220px_1fr]">
+          <div><p class="label text-jcfl-blue">Topics</p><h2 class="mt-2 text-4xl font-black">注目コンテンツ</h2></div>
+          <div class="grid gap-px bg-jcfl-deep md:grid-cols-4"><a href="#" class="relative min-h-[210px] bg-cover bg-center" style="background-image:linear-gradient(180deg,rgba(8,8,8,.05),rgba(8,8,8,.72)),url('https://www.jcfl.ac.jp/assets/top/img/btm_bnr03.jpg')"><p class="absolute bottom-0 left-0 right-0 p-4 text-xl font-black text-white">内定速報 2024-2025</p></a><a href="#" class="relative min-h-[210px] bg-cover bg-center" style="background-image:linear-gradient(180deg,rgba(8,8,8,.05),rgba(8,8,8,.72)),url('https://www.jcfl.ac.jp/assets/top/img/btm_bnr02.jpg')"><p class="absolute bottom-0 left-0 right-0 p-4 text-xl font-black text-white">在校生・内定者インタビュー</p></a><a href="#" class="relative min-h-[210px] bg-cover bg-center" style="background-image:linear-gradient(180deg,rgba(8,8,8,.05),rgba(8,8,8,.72)),url('https://www.jcfl.ac.jp/assets/top/img/btm_bnr01.jpg')"><p class="absolute bottom-0 left-0 right-0 p-4 text-xl font-black text-white">OB&OG 夢を叶えた卒業生</p></a><a href="#" class="relative min-h-[210px] bg-cover bg-center" style="background-image:linear-gradient(180deg,rgba(8,8,8,.05),rgba(8,8,8,.72)),url('https://www.jcfl.ac.jp/assets/top/img/btm_bnr08.jpg')"><p class="absolute bottom-0 left-0 right-0 p-4 text-xl font-black text-white">公務員へ続々合格の理由</p></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths" class="border-b border-jcfl-deep bg-jcfl-panel py-12">
+      <div class="mx-auto max-w-[1440px] px-4 lg:px-8">
+        <div class="mb-6 grid gap-4 lg:grid-cols-[1fr_360px]"><div><p class="label text-jcfl-red">Features</p><h2 class="section-title mt-3 text-5xl lg:text-7xl">JCFLが選ばれる理由</h2></div><div class="panel p-5 text-sm font-bold leading-7">全学科担任制と進路別サポートで、入学から卒業、その先の進路まで学生一人ひとりに向き合います。</div></div>
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-2 lg:grid-cols-4"><article class="bg-[#ffffff] p-6"><p class="text-6xl font-black text-jcfl-red">01</p><h3 class="mt-8 text-2xl font-black">全学科担任制</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">学習・就職・生活まで、担任が一人ひとりに向き合いアドバイス。</p></article><article class="bg-[#ffffff] p-6"><p class="text-6xl font-black text-jcfl-red">02</p><h3 class="mt-8 text-2xl font-black">就職ダブルサポート</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">進路変更にも対応。希望進路に合わせ複数の先生が夢実現を支援。</p></article><article class="bg-[#ffffff] p-6"><p class="text-6xl font-black text-jcfl-red">03</p><h3 class="mt-8 text-2xl font-black">実習施設が充実</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">エアライン、ホテル、ブライダルなど専門実習施設を備えた学び。</p></article><article class="bg-[#ffffff] p-6"><p class="text-6xl font-black text-jcfl-red">04</p><h3 class="mt-8 text-2xl font-black">多彩な留学制度</h3><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/62">短期留学・海外研修・海外大学進学など全学科で世界を体験。</p></article></div>
+      </div>
+    </section>
+
+    <section id="courses" class="border-b border-jcfl-deep bg-jcfl-deep py-12 text-white">
+      <div class="mx-auto max-w-[1440px] px-4 lg:px-8">
+        <div class="mb-7 flex items-end justify-between gap-5"><div><p class="label text-jcfl-lime">Course</p><h2 class="section-title mt-3 text-6xl lg:text-8xl">学科・専攻</h2></div><p class="hidden max-w-md text-sm font-bold leading-7 text-white/65 lg:block">英語、世界の言語、大学編入、公務員、ビジネス、エアライン、ホテル、観光、海外留学まで。</p></div>
+        <div class="grid gap-px bg-white/25 lg:grid-cols-4"><article class="relative min-h-[430px] bg-cover bg-center p-5" style="background-image:linear-gradient(180deg,rgba(8,8,8,.15),rgba(8,8,8,.82)),url('https://www.jcfl.ac.jp/course/images/index_main.jpg')"><p class="text-7xl font-black text-white/85">EN</p><div class="absolute bottom-5 left-5 right-5"><h3 class="mb-4 text-2xl font-black">英語・世界の言語</h3><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">英語コミュニケーション科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">英語通訳翻訳科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">韓国語＋英語専攻</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">中国語・ベトナム語・タイ語</a></div></article><article class="relative min-h-[430px] bg-cover bg-center p-5" style="background-image:linear-gradient(180deg,rgba(8,8,8,.15),rgba(8,8,8,.82)),url('https://www.jcfl.ac.jp/assets/top/img/btm_bnr07.jpg')"><p class="text-7xl font-black text-white/85">BI</p><div class="absolute bottom-5 left-5 right-5"><h3 class="mb-4 text-2xl font-black">ビジネス・公務員</h3><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">国際公務員科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">総合ビジネス専攻</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">スポーツ・ビジネス専攻</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">ファッション・ビジネス専攻</a></div></article><article class="relative min-h-[430px] bg-cover bg-center p-5" style="background-image:linear-gradient(180deg,rgba(8,8,8,.15),rgba(8,8,8,.82)),url('https://www.jcfl.ac.jp/aboutus/img/campus/photo_03.jpg')"><p class="text-7xl font-black text-white/85">HT</p><div class="absolute bottom-5 left-5 right-5"><h3 class="mb-4 text-2xl font-black">エアライン・ホテル・観光</h3><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">国際エアライン科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">国際ホテル科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">国際ブライダル専攻</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">国際観光科</a></div></article><article class="relative min-h-[430px] bg-cover bg-center p-5" style="background-image:linear-gradient(180deg,rgba(8,8,8,.15),rgba(8,8,8,.82)),url('https://www.jcfl.ac.jp/sa/img/index_main_01.jpg')"><p class="text-7xl font-black text-white/85">SA</p><div class="absolute bottom-5 left-5 right-5"><h3 class="mb-4 text-2xl font-black">海外留学・大学編入</h3><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">海外留学科</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">アメリカ・カナダ留学</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">イギリス・豪州留学</a><a class="arrow mb-2 flex border border-white/35 bg-jcfl-deep/35 p-2 text-sm font-bold" href="https://www.jcfl.ac.jp/course/index.html">大学編入専攻</a></div></article></div>
+      </div>
+    </section>
+
+    <section id="finder" class="border-b border-jcfl-deep bg-gradient-to-r from-jcfl-blue via-jcfl-purple to-jcfl-red py-10 text-white">
+      <div class="mx-auto grid max-w-[1440px] gap-6 px-4 lg:grid-cols-[300px_1fr] lg:px-8">
+        <div><p class="label text-white/70">Find Your Path</p><h2 class="mt-2 text-4xl font-black leading-tight">好きなこと・進路から探す</h2></div>
+        <div class="grid gap-px bg-white/30 md:grid-cols-5"><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">英語を伸ばしたい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">韓国語も英語も学びたい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">空港で働きたい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">ホテル・テーマパークへ</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">海外大学へ進学したい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">大学編入を目指したい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">公務員になりたい</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">観光・ツアーの仕事</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">ファッション・スポーツビジネス</a><a href="https://www.jcfl.ac.jp/course/index.html" class="arrow bg-white/12 p-4 text-sm font-black hover:bg-[#ffffff] hover:text-jcfl-deep">まだ進路を迷っている</a></div>
+      </div>
+    </section>
+
+    <section id="career" class="border-b border-jcfl-deep bg-[#ffffff] py-12">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-jcfl-deep lg:grid-cols-[.8fr_1.2fr]">
+        <div class="bg-[#ffffff] p-6 lg:p-10"><p class="label text-jcfl-red">Results</p><h2 class="section-title mt-4 text-5xl lg:text-7xl">就職・資格・大学編入</h2><p class="mt-6 text-sm font-bold leading-7 text-jcfl-deep/65">ANA・JAL・帝国ホテルなどへの内定者インタビュー、就職指導、インターンシップ、資格実績、大学編入を紹介。</p></div>
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-3"><div class="bg-[#ffffff] p-7"><p class="text-6xl font-black text-jcfl-red">99.7%</p><h3 class="mt-7 text-xl font-black">就職内定率</h3><p class="mt-3 text-xs font-bold text-jcfl-deep/45">2024年度／2025年3月卒業生</p></div><div class="bg-[#ffffff] p-7"><p class="text-6xl font-black text-jcfl-red">ANA・JAL</p><h3 class="mt-7 text-xl font-black">内定者インタビュー</h3><p class="mt-3 text-xs font-bold text-jcfl-deep/45">エアライン・ホテルなど多数掲載</p></div><div class="bg-[#ffffff] p-7"><p class="text-6xl font-black text-jcfl-red">東京外大ほか</p><h3 class="mt-7 text-xl font-black">大学編入実績</h3><p class="mt-3 text-xs font-bold text-jcfl-deep/45">筑波・上智・明治・法政など</p></div></div>
+      </div>
+    </section>
+
+    <section id="study-abroad" class="border-b border-jcfl-deep bg-jcfl-panel">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-jcfl-deep lg:grid-cols-[1.15fr_.85fr]">
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-2"><div class="image-tile min-h-[420px]" style="background-image:url('https://www.jcfl.ac.jp/sa/img/index_main_01.jpg')"></div><div class="bg-[#ffffff] p-7"><p class="label text-jcfl-blue">Study Abroad</p><h2 class="mt-4 text-5xl font-black leading-none">JCFLで<br>実現できる留学。</h2><p class="mt-5 text-sm font-bold leading-7 text-jcfl-deep/65">海外大学進学、韓国・ベトナム・タイへの進学、短期留学、海外研修、スポーツ留学まで。</p></div></div>
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-2 lg:grid-cols-1"><a href="https://www.jcfl.ac.jp/sa/sp_index.html" class="arrow bg-[#ffffff] p-6 text-xl font-black">英語圏各国大学進学・編入</a><a href="https://www.jcfl.ac.jp/sa/sp_index.html" class="arrow bg-[#ffffff] p-6 text-xl font-black">韓国の大学に進学・編入</a><a href="https://www.jcfl.ac.jp/sa/sp_index.html" class="arrow bg-[#ffffff] p-6 text-xl font-black">短期留学・海外研修・サンドイッチ留学</a><a href="https://www.jcfl.ac.jp/sa/sp_index.html" class="arrow bg-[#ffffff] p-6 text-xl font-black">スポーツ留学・海外インターンシップ</a></div>
+      </div>
+    </section>
+
+    <section id="life" class="border-b border-jcfl-deep bg-[#ffffff] py-12">
+      <div class="mx-auto max-w-[1440px] px-4 lg:px-8">
+        <div class="mb-6 grid gap-4 lg:grid-cols-[280px_1fr]"><div><p class="label text-jcfl-red">Campus Life</p><h2 class="mt-2 text-4xl font-black">高田馬場・目白で学ぶ。</h2></div><div class="grid gap-px bg-jcfl-deep md:grid-cols-3"><div class="bg-[#ffffff] p-5"><p class="label text-jcfl-red">施設</p><p class="mt-3 text-xl font-black">高田馬場・目白キャンパス</p></div><div class="bg-[#ffffff] p-5"><p class="label text-jcfl-red">実習</p><p class="mt-3 text-xl font-black">航空・ホテル・ブライダル施設</p></div><div class="bg-[#ffffff] p-5"><p class="label text-jcfl-red">交流</p><p class="mt-3 text-xl font-black">学生ラウンジで友だちや先生と</p></div></div></div>
+        <div class="grid gap-px bg-jcfl-deep md:grid-cols-5"><div class="image-tile md:col-span-2" style="background-image:url('https://www.jcfl.ac.jp/aboutus/img/campus/photo_03.jpg')"></div><div class="image-tile " style="background-image:url('https://www.jcfl.ac.jp/aboutus/img/kaigai/kaigai_main.jpg')"></div><div class="image-tile md:col-span-2" style="background-image:url('https://www.jcfl.ac.jp/course/images/index_main.jpg')"></div></div>
+      </div>
+    </section>
+
+    <section class="border-b border-jcfl-deep bg-jcfl-panel py-12">
+      <div class="mx-auto max-w-[1440px] px-4 lg:px-8">
+        <div class="grid gap-5 lg:grid-cols-[260px_1fr]"><div><p class="label text-jcfl-blue">Voice</p><h2 class="mt-2 text-4xl font-black">在校生・内定者・卒業生</h2></div><div class="grid gap-px bg-jcfl-deep md:grid-cols-3"><article class="bg-[#ffffff] p-6"><p class="text-xl font-black leading-9">“全日本空輸（ANA）キャビンアテンダント内定。韓国語専攻からCAへ挑戦。”</p><p class="mt-7 text-xs font-black tracking-[.15em] text-jcfl-red">韓国語＋英語専攻 / 内定者</p></article><article class="bg-[#ffffff] p-6"><p class="text-xl font-black leading-9">“面接練習や卒業課題の助言が、大学編入合格への大きな後押しに。”</p><p class="mt-7 text-xs font-black tracking-[.15em] text-jcfl-red">大学編入専攻 / 合格者</p></article><article class="bg-[#ffffff] p-6"><p class="text-xl font-black leading-9">“留学現地レポートで、厳しくも楽しい海外生活と成長を発信。”</p><p class="mt-7 text-xs font-black tracking-[.15em] text-jcfl-red">海外大学進学 / 卒業生</p></article></div></div>
+      </div>
+    </section>
+
+    <section id="news" class="border-b border-jcfl-deep bg-[#ffffff] py-12">
+      <div class="mx-auto grid max-w-[1440px] gap-6 px-4 lg:grid-cols-[280px_1fr] lg:px-8">
+        <div><p class="label text-jcfl-red">News</p><h2 class="section-title mt-3 text-5xl">ニュース</h2><div class="mt-6 grid grid-cols-2 gap-px bg-jcfl-deep text-xs font-black"><button class="tab active bg-jcfl-deep p-3 text-white" data-filter="all">全て</button><button class="tab bg-jcfl-panel p-3" data-filter="admission">入試</button><button class="tab bg-jcfl-panel p-3" data-filter="career">進路</button><button class="tab bg-jcfl-panel p-3" data-filter="global">留学</button></div></div>
+        <div class="border border-jcfl-deep"><a href="https://www.jcfl.ac.jp/" data-news="career" class="news-item grid gap-3 border-b border-jcfl-deep/12 p-4 text-sm hover:bg-jcfl-panel md:grid-cols-[130px_100px_1fr_40px]"><span class="font-black text-jcfl-red">2026.7.7</span><span class="bg-jcfl-deep px-2 py-1 text-center text-[11px] font-black uppercase text-white">career</span><span class="font-bold">台風に伴う説明会等開催情報のお知らせ</span><span class="font-black">↗</span></a><a href="https://www.jcfl.ac.jp/" data-news="admission" class="news-item grid gap-3 border-b border-jcfl-deep/12 p-4 text-sm hover:bg-jcfl-panel md:grid-cols-[130px_100px_1fr_40px]"><span class="font-black text-jcfl-red">2026.6.30</span><span class="bg-jcfl-deep px-2 py-1 text-center text-[11px] font-black uppercase text-white">admission</span><span class="font-bold">総合型選抜「併願」7/1（水）受付開始</span><span class="font-black">↗</span></a><a href="https://www.jcfl.ac.jp/" data-news="admission" class="news-item grid gap-3 border-b border-jcfl-deep/12 p-4 text-sm hover:bg-jcfl-panel md:grid-cols-[130px_100px_1fr_40px]"><span class="font-black text-jcfl-red">2026.6.2</span><span class="bg-jcfl-deep px-2 py-1 text-center text-[11px] font-black uppercase text-white">admission</span><span class="font-bold">総合型選抜／プレミアム選抜の詳しい受験方法</span><span class="font-black">↗</span></a><a href="https://www.jcfl.ac.jp/" data-news="global" class="news-item grid gap-3 border-b border-jcfl-deep/12 p-4 text-sm hover:bg-jcfl-panel md:grid-cols-[130px_100px_1fr_40px]"><span class="font-black text-jcfl-red">2026.4.1</span><span class="bg-jcfl-deep px-2 py-1 text-center text-[11px] font-black uppercase text-white">global</span><span class="font-bold">学科・入試情報を2027年4月入学希望者向けに更新</span><span class="font-black">↗</span></a><a href="https://www.jcfl.ac.jp/" data-news="admission" class="news-item grid gap-3 border-b border-jcfl-deep/12 p-4 text-sm hover:bg-jcfl-panel md:grid-cols-[130px_100px_1fr_40px]"><span class="font-black text-jcfl-red">2024.1.25</span><span class="bg-jcfl-deep px-2 py-1 text-center text-[11px] font-black uppercase text-white">admission</span><span class="font-bold">令和6年能登半島地震に被災された受験生へのお知らせ</span><span class="font-black">↗</span></a></div>
+      </div>
+    </section>
+
+    <section id="admission" class="border-b border-jcfl-deep bg-jcfl-panel py-12">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-jcfl-deep lg:grid-cols-3">
+        <div class="bg-[#ffffff] p-8"><p class="label text-jcfl-red">Admissions</p><h2 class="mt-3 text-4xl font-black">募集要項・奨学金</h2><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/65">自分に合った入学方法を選び、学科ごとの学費やその他費用を確認できます。</p><a href="https://www.jcfl.ac.jp/recruitment/" class="btn mt-6 bg-jcfl-deep px-6 py-3 text-sm text-white">詳しく見る</a></div>
+        <div class="bg-jcfl-blue p-8 text-white"><p class="label text-white/70">International Students</p><h2 class="mt-3 text-4xl font-black">留学生の方へ</h2><p class="mt-4 text-sm font-bold leading-7 text-white/75">International Students向けの日本語学科・入学案内へつながる導線です。</p><a href="https://intl.jcfl.ac.jp/" class="btn mt-6 bg-[#ffffff] px-6 py-3 text-sm text-jcfl-blue">View More</a></div>
+        <div class="bg-[#ffffff] p-8"><p class="label text-jcfl-blue">Scholarship</p><h2 class="mt-3 text-4xl font-black">特待生奨学金制度</h2><p class="mt-4 text-sm font-bold leading-7 text-jcfl-deep/65">自分のチカラを試したい、経済的な不安を軽くしたい人を支えるJCFL独自制度。</p><a href="https://www.jcfl.ac.jp/recruitment/" class="btn mt-6 bg-jcfl-red px-6 py-3 text-sm text-white">相談する</a></div>
+      </div>
+    </section>
+
+    <section id="request" class="bg-jcfl-deep text-white">
+      <div class="mx-auto grid max-w-[1440px] gap-px bg-white/20 lg:grid-cols-[1fr_420px]">
+        <div class="p-8 lg:p-12"><p class="label text-jcfl-lime">Next Action</p><h2 class="section-title mt-4 text-5xl lg:text-7xl">11学科34専攻を、<br>まずは体験。</h2></div>
+        <div class="grid gap-px bg-white/20"><a href="https://oc.jcfl.ac.jp/" class="arrow bg-jcfl-red p-7 text-xl font-black">オープンキャンパス予約</a><a href="https://entry.s-axol.jp/jcfl/step1?f=5" class="arrow bg-[#ffffff] p-7 text-xl font-black text-jcfl-deep">資料請求</a><a href="https://www.jcfl.ac.jp/contact/" class="arrow bg-jcfl-blue p-7 text-xl font-black">お問い合わせ</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="access" class="bg-jcfl-deep text-white">
+    <div class="mx-auto grid max-w-[1440px] gap-px bg-white/20 lg:grid-cols-[380px_1fr_320px]">
+      <div class="bg-jcfl-deep p-8"><img src="assets/logo.png" alt="日本外国語専門学校" class="h-12 bg-[#ffffff] p-1"><p class="mt-6 text-sm font-bold leading-7 text-white/65">〒161-0033 東京都新宿区下落合1-5-16（入学事務局）<br>TEL: 03-3365-6141<br>高田馬場駅 徒歩3分</p></div>
+      <div class="grid bg-jcfl-deep p-8 text-sm font-bold sm:grid-cols-3"><a class="py-2" href="https://www.jcfl.ac.jp/aboutus/">学校紹介</a><a class="py-2" href="https://www.jcfl.ac.jp/course/index.html">学科・専攻紹介</a><a class="py-2" href="https://www.jcfl.ac.jp/recruitment/">募集要項・奨学金</a><a class="py-2" href="https://www.jcfl.ac.jp/job/index10.html">就職・資格・大学編入</a><a class="py-2" href="https://www.jcfl.ac.jp/sa/sp_index.html">海外留学</a><a class="py-2" href="https://oc.jcfl.ac.jp/">オープンキャンパス</a><a class="py-2" href="https://entry.s-axol.jp/jcfl/step1?f=5">資料請求</a><a class="py-2" href="https://www.jcfl.ac.jp/access/">アクセス案内</a><a class="py-2" href="https://www.jcfl.ac.jp/contact/">お問い合わせ</a></div>
+      <div class="bg-jcfl-deep p-8"><p class="label text-white/50">Official Social Media</p><div class="mt-5 flex gap-3"><span class="grid h-10 w-10 place-items-center border border-white/30">IG</span><span class="grid h-10 w-10 place-items-center border border-white/30">X</span><span class="grid h-10 w-10 place-items-center border border-white/30">YT</span><span class="grid h-10 w-10 place-items-center border border-white/30">LN</span></div></div>
+    </div>
+    <div class="border-t border-white/20 px-4 py-4 text-center text-xs text-white/50">Copyright © Japan College of Foreign Languages. Proposal demo.</div>
+  </footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn');const mega=document.getElementById('mega');menuBtn.addEventListener('click',()=>mega.classList.toggle('open'));mega.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mega.classList.remove('open')));document.getElementById('railTop')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+    document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.news-item').forEach(n=>n.classList.toggle('hidden',f!=='all'&&n.dataset.news!==f));}));
+    if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('.reveal').forEach(el=>gsap.from(el,{y:24,opacity:0,duration:.65,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%'}}));}
+  </script>
+</body>
+</html>
