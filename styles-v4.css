@@ -388,3 +388,6 @@ body .container{width:min(var(--container),calc(100% - var(--page-margin)*2));ma
 .cta-actions a:nth-child(2),
 .cta-actions a:nth-child(3){background:var(--white);color:var(--ink)}
 .cta-actions a span{color:var(--ink)}
+
+.nav a:hover{background:var(--white)}
+.news-list{border:0}
