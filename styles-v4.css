@@ -318,7 +318,7 @@ body .container{width:min(var(--container),calc(100% - var(--page-margin)*2));ma
 
 #topics .split-head{gap:0}
 #topics .split-head>div:first-child{grid-column:span 4;padding-right:var(--grid-gap)}
-#topics .topic-grid{grid-column:span 8;grid-template-columns:repeat(8,minmax(0,1fr));gap:0}
+#topics .topic-grid{grid-column:span 8;grid-template-columns:repeat(8,minmax(0,1fr));gap:0;background:var(--white)}
 #topics .topic-card{grid-column:span 2;min-height:320px}
 
 #study-abroad .abroad-grid{gap:0}
@@ -438,10 +438,14 @@ section::after,
 #strengths>.container{padding-top:48px}
 #strengths .feature-intro .panel.card-pad.reveal{padding-left:0;padding-right:0}
 #strengths>.container>.feature-grid>.feature-card.reveal{padding-bottom:48px}
-#strengths .feature-grid{background:var(--white)}
-#strengths .feature-grid>.feature-card{border-top:1px solid var(--ink)}
-#strengths .feature-grid>.feature-card{border-right:1px solid var(--ink)}
+#strengths .feature-grid{background:var(--white);gap:0}
+#strengths .feature-grid>.feature-card{position:relative;border-top:1px solid transparent;border-right:1px solid transparent;--line-x:1;--line-y:1}
+#strengths .feature-grid>.feature-card::before,
+#strengths .feature-grid>.feature-card::after{content:"";position:absolute;z-index:3;pointer-events:none;background:var(--ink)}
+#strengths .feature-grid>.feature-card::before{left:0;top:-1px;width:100%;height:1px;transform:scaleX(var(--line-x));transform-origin:left center}
+#strengths .feature-grid>.feature-card::after{right:0;top:0;width:1px;height:100%;transform:scaleY(var(--line-y));transform-origin:center bottom}
 #strengths .feature-grid>.feature-card:first-child{border-left:1px solid var(--ink)}
+#strengths .feature-grid>.feature-card:nth-child(n+2){left:-1px;width:calc(100% + 1px);border-left:1px solid var(--ink)}
 #strengths .feature-grid>.feature-card h3{margin-top:0;font-weight:700}
 #strengths .feature-grid>.feature-card .feature-num{margin-top:78px;font-weight:100;color:#BC1932}
 #courses .split-head.wide.course-head{padding-top:48px}
@@ -456,14 +460,15 @@ section::after,
 #study-abroad .abroad-grid,
 #study-abroad .abroad-main,
 #study-abroad .abroad-links{background:transparent}
-#study-abroad .abroad-links.reveal a{font-weight:500}
+#study-abroad .abroad-links.reveal a{font-weight:500;font-size:18px}
 #life .split-head.life-head{padding-top:48px}
 #life .life-blocks.reveal{border-top:0;border-bottom:0}
 #life .life-blocks.reveal>div+div{border-left:1px solid var(--ink)}
 #life .life-blocks.reveal p:not(.label){font-weight:500!important}
 .section.voice>.container>.reveal{padding-top:48px}
-.section.voice .voice-cards.reveal{padding-top:0;background:transparent}
-.section.voice .voice-card+ .voice-card{border-left:1px solid var(--ink)}
+.section.voice .voice-cards.reveal{padding-top:0;margin-top:20px;background:transparent;gap:0}
+.section.voice .voice-card{border:1px solid var(--ink)}
+.section.voice .voice-card+ .voice-card{border-left:0}
 .section.voice .voice-card blockquote{font-weight:500}
 #news .news-grid>div.reveal:first-child{display:flex;flex-direction:column;justify-content:center}
 #news .news-list.reveal .news-item{height:76px;padding-top:0;padding-bottom:0}
@@ -478,6 +483,13 @@ section::after,
 .footer-grid{gap:0;background:transparent;border:0}
 #admission .admission-card .btn.btn-red{background:var(--ink);border-color:var(--ink);color:var(--white)}
 #admission .admission-card .btn.btn-red:hover{background:var(--ink);border-color:var(--ink);color:var(--white);transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal,
+  .hero-img,
+  .media-bg,
+  #strengths .feature-grid>.feature-card{animation:none!important;transition:none!important;transform:none!important;opacity:1!important;filter:none!important;clip-path:none!important;--line-x:1!important;--line-y:1!important}
+}
 
 @media(max-width:1180px){
   :root{--section:68px;--section-gap:24px}
