@@ -334,8 +334,6 @@ body .container{width:min(var(--container),calc(100% - var(--page-margin)*2));ma
 
 #news .news-grid{gap:24px}
 #news .news-grid>div:first-child{grid-column:span 4}
-#news .tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
-#news .tab{grid-column:span 2}
 #news .news-list{grid-column:span 8}
 
 @media(max-width:1180px){
@@ -377,6 +375,10 @@ body .container{width:min(var(--container),calc(100% - var(--page-margin)*2));ma
 .important-items a{border-right-color:var(--line)}
 .important-title .label{color:#bc1932!important}
 .important-items .label{color:#fec6e9!important}
+.important .important-items .label{color:#c2c2c2!important}
+#open-campus .oc-date{color:#c2c2c2}
+#strengths .feature-card.reveal .feature-num{color:#BC1932}
+#career .results-cards .result-card b{color:#c2c2c2}
 
 .admission-card.blue{background:var(--white);color:var(--ink)}
 .admission-card .label{color:#bc1932!important}
@@ -434,35 +436,56 @@ section::after,
 #open-campus .oc-card{grid-column:span 3;min-height:560px;padding:48px 28px;border-left:1px solid var(--ink);background:var(--white)}
 #open-campus .oc-card:nth-child(2){border-left:0}
 #strengths>.container{padding-top:48px}
+#strengths .feature-intro .panel.card-pad.reveal{padding-left:0;padding-right:0}
 #strengths>.container>.feature-grid>.feature-card.reveal{padding-bottom:48px}
 #strengths .feature-grid{background:var(--white)}
-#strengths .feature-grid>.feature-card{border-top:0}
+#strengths .feature-grid>.feature-card{border-top:1px solid var(--ink)}
 #strengths .feature-grid>.feature-card{border-right:1px solid var(--ink)}
 #strengths .feature-grid>.feature-card:first-child{border-left:1px solid var(--ink)}
+#strengths .feature-grid>.feature-card h3{margin-top:0;font-weight:700}
+#strengths .feature-grid>.feature-card .feature-num{margin-top:78px;font-weight:100;color:#BC1932}
 #courses .split-head.wide.course-head{padding-top:48px}
+#career .results-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:0;background:transparent;border:1px solid var(--ink)}
+#career .results-copy{grid-column:span 6;min-height:540px;padding:48px;display:flex;flex-direction:column;justify-content:center}
 #career .results-copy.reveal{padding-top:48px}
+#career .results-copy .section-title{max-width:none;white-space:nowrap;font-size:64px!important}
+#career .results-cards{grid-column:span 6;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;background:transparent}
+#career .results-cards>.result-card:first-child{display:none}
+#career .results-cards>.result-card{grid-column:span 3;min-height:540px;border-left:1px solid var(--ink);background:var(--white)}
 #career .results-cards>.result-card.reveal{padding-top:48px}
 #study-abroad .abroad-grid,
 #study-abroad .abroad-main,
 #study-abroad .abroad-links{background:transparent}
+#study-abroad .abroad-links.reveal a{font-weight:500}
 #life .split-head.life-head{padding-top:48px}
 #life .life-blocks.reveal{border-top:0;border-bottom:0}
 #life .life-blocks.reveal>div+div{border-left:1px solid var(--ink)}
+#life .life-blocks.reveal p:not(.label){font-weight:500!important}
 .section.voice>.container>.reveal{padding-top:48px}
 .section.voice .voice-cards.reveal{padding-top:0;background:transparent}
 .section.voice .voice-card+ .voice-card{border-left:1px solid var(--ink)}
+.section.voice .voice-card blockquote{font-weight:500}
 #news .news-grid>div.reveal:first-child{display:flex;flex-direction:column;justify-content:center}
-#news .news-list.reveal .news-item{padding-top:26px;padding-bottom:26px}
-#news .news-list.reveal{height:380px;display:flex;flex-direction:column;justify-content:center}
+#news .news-list.reveal .news-item{height:76px;padding-top:0;padding-bottom:0}
+#news .news-list.reveal{height:380px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 #news .news-list.reveal .news-item{width:100%}
-#news .tabs{row-gap:0}
+#news .news-all{margin-top:24px;width:142px;min-height:0;padding:0;border:0;background:transparent;overflow:visible}
+#news .news-all:hover{color:inherit;background:transparent;transform:none}
 #request .cta-actions{gap:0;background:transparent}
 #request .cta-actions a{border:0}
 #request .cta-actions a+a{border-top:1px solid var(--ink)}
+.section.final-cta{padding-top:48px}
 .footer-grid{gap:0;background:transparent;border:0}
+#admission .admission-card .btn.btn-red{background:var(--ink);border-color:var(--ink);color:var(--white)}
+#admission .admission-card .btn.btn-red:hover{background:var(--ink);border-color:var(--ink);color:var(--white);transform:none}
 
 @media(max-width:1180px){
   :root{--section:68px;--section-gap:24px}
+  #career .results-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  #career .results-copy,
+  #career .results-cards{grid-column:span 3}
+  #career .results-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #career .results-cards>.result-card{grid-column:span 3}
   #open-campus .oc-lead,
   #open-campus .oc-cards{grid-column:span 6}
   #open-campus .oc-card{min-height:420px}
@@ -470,6 +493,11 @@ section::after,
 
 @media(max-width:520px){
   :root{--section:52px;--section-gap:20px}
+  #career .results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #career .results-copy,
+  #career .results-cards{grid-column:span 2}
+  #career .results-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #career .results-cards>.result-card{grid-column:span 2;border-left:0;border-top:1px solid var(--ink)}
   #open-campus .oc-lead,
   #open-campus .oc-cards{grid-column:span 2}
   #open-campus .oc-cards{grid-template-columns:1fr}
